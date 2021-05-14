@@ -26,7 +26,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         for (int i = 0; i < 20; i ++){
-            User user = new User("Name" + rng(), String.valueOf(rng()), true);
+            User user = new User("Name" + rng(), String.valueOf(rng()), rngBool());
             userList.add(user);
         }
         setContentView(R.layout.activity_list);
@@ -74,5 +74,16 @@ public class ListActivity extends AppCompatActivity {
         Random ran = new Random();
         int ranVal = ran.nextInt();
         return ranVal;
+    }
+
+    private boolean rngBool(){
+        Random ran = new Random();
+        int ranVal = ran.nextInt(2);
+        if (ranVal == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

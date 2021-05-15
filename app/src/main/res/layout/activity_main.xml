@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/displayName"
+                android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageview" />
 
             <TextView
-                android:id="@+id/displayDesc"
+                android:id="@+id/txtDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -43,7 +43,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/displayName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
             <Button
                 android:id="@+id/btnMessage"
@@ -54,7 +54,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnFollow"
-                app:layout_constraintTop_toBottomOf="@+id/displayDesc" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
             <ImageView
                 android:id="@+id/imageview"
@@ -76,7 +76,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/btnMessage"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/displayDesc" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

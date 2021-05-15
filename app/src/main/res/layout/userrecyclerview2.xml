@@ -19,12 +19,12 @@
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/imageView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/img_profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/img_profile"
             android:layout_width="115dp"
             android:layout_height="168dp"
             android:layout_marginStart="2dp"
@@ -40,14 +40,13 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="409dp"
-            android:layout_height="364dp"
+            android:layout_width="317dp"
+            android:layout_height="275dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.765"
+            app:layout_constraintVertical_bias="0.596"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

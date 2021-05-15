@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_profile"
         android:layout_width="11dp"
         android:layout_height="113dp"
         android:layout_weight="1"

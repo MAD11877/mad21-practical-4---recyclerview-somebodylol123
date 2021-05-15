@@ -3,6 +3,7 @@ package sg.edu.np.madpractical;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userQuery(userobj);
+                userQuery(holder, position, userobj);
             }
         });
         
@@ -64,22 +65,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     }
 
 
-    private void userQuery(User user){
+    private void userQuery(UserViewHolder holder, int position, User userobj){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(user.getName());
+        builder.setMessage(userobj.getName());
         builder.setTitle("Profile");
         builder.setCancelable(true);
-        builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                context.finish();
-            }
-        });
+        builder.setNegativeButton("close", null);
         builder.setPositiveButton("View", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("User", user);
+                Bundle bundle = new Bundle();
+                bundle.putInt("Position",position);
+                Intent intent = new Intent(holder.image.getContext(), MainActivity.class);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
     private final static String TAG = "Main Activity";
@@ -20,12 +21,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent data = getIntent();
-        User user = (User)data.getSerializableExtra("User");
+        int position = data.getIntExtra("position",0);
+        User user = ListActivity.userList.get(position);
         header = findViewById(R.id.txtName);
         desc = findViewById(R.id.txtDescription);
         header.setText(user.getName());
         desc.setText(user.getDescription());
-        Button followBtn = findViewById(R.id.follow);
+        Button followBtn = findViewById(R.id.btnFollow);
         //User user  = new User("Random","Description",true);
         if (user.getFollowed() == true){
             followBtn.setText("UNFOLLOW");

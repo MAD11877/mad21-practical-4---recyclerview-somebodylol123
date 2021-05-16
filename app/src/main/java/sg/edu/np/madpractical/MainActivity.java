@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private final static String TAG = "Main Activity";
     private TextView header;
     private TextView desc;
+    private Button followBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         desc = findViewById(R.id.txtDescription);
         header.setText(user.getName());
         desc.setText(user.getDescription());
-        Button followBtn = findViewById(R.id.btnFollow);
+        followBtn = findViewById(R.id.btnFollow);
         //User user  = new User("Random","Description",true);
         if (user.getFollowed() == true){
             followBtn.setText("UNFOLLOW");

@@ -18,11 +18,9 @@ import java.util.ArrayList;
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     public final static String TAG = "UserAdapter";
     ArrayList<User> data;
-    Activity context;
 
-    public UserAdapter(ArrayList<User> input, Activity activity) {
+    public UserAdapter(ArrayList<User> input) {
         data = input;
-        context = activity;
     };
 
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -66,7 +64,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
 
     private void userQuery(UserViewHolder holder, int position, User userobj){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(holder.image.getContext());
         builder.setMessage(userobj.getName());
         builder.setTitle("Profile");
         builder.setCancelable(true);
@@ -78,7 +76,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 bundle.putInt("Position",position);
                 Intent intent = new Intent(holder.image.getContext(), MainActivity.class);
                 intent.putExtras(bundle);
-                context.startActivity(intent);
+                holder.image.getContext().startActivity(intent);
             }
         });
         AlertDialog alert = builder.create();
